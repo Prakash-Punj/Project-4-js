@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 psd</title>
+    <meta name="description" content="4rd psd project">
+
+    <style>
+
+*,::before,::after{ 
+            margin: 0; 
+            box-sizing: border-box;
+        }
+        a{
+             text-decoration: none;
+        }
+        img{
+             vertical-align: bottom;
+            }
+        label{
+             display: block;
+            }
+        button{
+             padding: 0; 
+             cursor: pointer;
+            }
+        :disabled{
+             cursor: not-allowed;
+            }
+        ul{
+             list-style: none; 
+             padding: 0;
+            }
+        html{
+             font-size: 15px; 
+             scroll-behavior: smooth; 
+             scroll-padding-top: 80px; 
+             --bclr: #739ee3;
+            --yclr: #edc315;
+            --dbclr: #5380c1;
+            }
+        body{
+            font-size: 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+        .container{
+            max-width: 1200px;
+            margin: auto;
+           
+            background-color: var(--bclr);
+        }
+        .col-3{
+            flex: 1 1 auto;
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+        .col-4{
+            flex: 1 1 auto;
+            flex-basis: 33.3%;
+            max-width: 33.3%;
+        }
+        .col-6{
+            flex: 1 1 auto;
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        .col-9{
+            flex: 1 1 auto;
+            flex-basis: 75%;
+            max-width: 75%;
+        }
+
+        header{
+            position: sticky;
+            top: 0;
+        }
+        /* header .container{
+            background-color: transparent;
+        } */
+        
+        .heading{
+            display: flex;
+           
+        }
+        .logo img{
+            width: 30%;
+            aspect-ratio: 1.5;
+            margin: 1rem 1rem 1rem 5rem;
+        }
+        .chk{ 
+            display: none; 
+            width: 90px; 
+            height: 35px; 
+            border: 2px solid; 
+            color: #fff; 
+            background: none; 
+            border-radius: 10px; 
+ 
+            padding: 5px 10px; 
+            margin: 1rem;
+            float: right;
+        }
+        .chk span{ 
+            display: block; 
+            height: 2px; 
+            background: #fff; 
+            margin: 4px 0; 
+        } 
+
+        .chk.active span:nth-child(1){
+            transform: translateY(6px) rotate(-14deg);
+        }
+        .chk.active span:nth-child(2){
+            opacity: 0;
+        }
+        .chk.active span:nth-child(3){
+            transform: translateY(-6px) rotate(14deg);
+        }
+
+        .menu .chk:checked + .collapse{ display: block; }
+        .menu ul{
+            display: flex;
+            float: right;
+            margin-top: 2rem;
+        }
+        .menu a{
+            padding: 1rem 2rem 1rem 1rem;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .wrap-1 .back{
+            background-image: url(4_img-1.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .wrap-1 section{
+            padding: 13rem 2rem;
+            text-align: center;
+            color: #fff;
+        }
+        .wrap-1 h1{
+            font-size: 3rem;
+            letter-spacing: 0.06rem;
+        }
+        .wrap-1 p{
+            font-size: 0.9rem;
+            margin: 1rem 1rem 2rem 2rem;
+        }
+        .btn a{
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            padding: 0.6rem 3rem;
+            border-radius: 20px;
+            background-color: var(--yclr);
+        }
+
+        .wrap-2 .back-2{
+            background-image: url(4_img-2-4.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            text-align: center;
+            color: #fff;
+            padding: 5rem 0;
+        }
+        .title h2{
+            font-size: 2.8rem;
+            font-weight: 900;
+            padding: 1rem;
+            padding-top: 2rem;
+        }
+        .title p{
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin: 1rem 1rem 2rem 2rem;
+        }
+        .pet_box{
+            display: flex;
+            margin: 1rem;
+            padding: 1rem 11rem;
+            flex-flow: wrap;
+        }
+        .pet_box1 img{
+            width: 10rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            margin: 0.5rem;
+        }
+        .pet_box1 h3{
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 0.5rem;
+        }
+        .pet_box1 p{
+            font-size: 0.8rem;
+            font-weight: 300;
+            padding: 0.5rem 2rem;
+        }
+        
+        .wrap-3 .back-3{
+            background-image: url(4_img-3.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            text-align: center;
+            color: #fff;
+            padding: 4rem 0;
+            display: grid;
+        }
+        .pet_circle{
+            display: flex;
+            margin: 1rem;
+            place-content: center;
+        }
+        .pet_circle1{
+            width: 10rem;
+            height: 10rem;
+            border: 6px solid;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            margin: 4rem;
+        }
+        .pet_circle1 h3{
+            font-size: 2.2rem;
+            padding-top: 2rem;
+        }
+        .pet_circle1 p{
+            font-size: 1rem;
+            font-weight: 300;
+            padding-bottom: 3rem;
+        }
+
+        .wrap-4 .container{
+            background-color: var(--dbclr);
+        }
+        .title_2{
+            background-image: url(4_img-4-2.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding: 6rem 2rem;
+            display: flex;
+            flex-flow: wrap;
+        }
+        .title_2 section{
+            text-align: left;
+            padding: 6rem 1rem 6rem 6rem;
+            color: #fff;
+        }
+        .title_2 section h2{
+            font-size: 2.8rem;
+            font-weight: 900;
+            padding: 1rem;
+            padding-top: 2rem;
+        }
+        .title_2 section p{
+            font-size: 1.2rem;
+            font-weight: 300;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+        .title-2 img{
+            width: 80%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            padding: 3rem;
+        }
+
+        .wrap-6{
+            text-align: center;
+            color: #fff;
+        }
+        .wrap-6 .container{
+            background-color: var(--dbclr);
+        }
+        .wrap-6 section h2{
+            font-size: 2.6rem;
+            font-weight: 900;
+            padding: 1rem;
+        }
+        .wrap-6 section p{
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 14rem 1rem;
+        }
+        .premium{
+            display: flex;
+            padding: 1rem 0 1rem 1rem;
+            place-content: center;
+        }
+        .premium_box{
+            width: auto;
+            height: auto;
+            padding: 2rem;
+            margin: 1rem;
+            background-color: #fff;
+            color: var(--bclr);
+            border-radius: 5px;
+        }
+        .premium_box h3, .premium_box h4{
+            padding: 1rem;
+        }
+        .premium_box p{
+         padding-bottom: 2rem;   
+        }
+        
+
+        .title-3-img{
+            background-image: url(4_img-7.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: #fff;
+            text-align: center;
+        }
+        .title-3 h2{
+            font-size: 3rem;
+            font-weight: 900;
+            padding: 4rem 1rem 1rem 1rem;
+        }
+        .title-3 p{
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 1rem 13rem;
+        }
+        .title-3-box{
+            display: flex;
+            padding: 1rem;
+            flex-flow: wrap;
+            margin: 2rem auto 0;
+        }
+        .title-3-box1{
+            padding: 0 0 2rem 0;
+            display: flex;
+        }
+        .title-3-box1-img img{
+            width: 4rem;
+            aspect-ratio: 1;
+            margin: 1rem;
+        }
+       
+        .title-3-box1 h3{
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            text-align: left;
+        }
+        .title-3-box1 p{
+            font-size: 1rem;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        .wrap-8-img{
+            background-image: url(4_img-8.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap-8-img section{
+            text-align: center;
+            padding: 1rem 10rem 1rem 10rem;
+            color: #fff;
+        }
+        .wrap-8-img p{
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.05rem;
+            margin-top: 18rem;
+        }
+        .wrap-8-img h3{
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 2rem;
+            margin-bottom: 17rem;
+        }
+
+        .content{
+            display: flex;
+            flex-flow: wrap;
+            padding: 3rem 1rem 3rem 2rem;
+            text-align: left;
+            color: #fff;
+            background-color: #333333;
+        }
+        .f-title{
+            padding: 1rem 3rem;
+        }
+        .f-about, .f-service, .f-other{
+            padding: 1rem 1rem;
+        }
+        .content h4{
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding-bottom: 1rem;
+        }
+        .content p{
+            font-size: 1rem;
+            font-weight: 300;
+            padding: 0.1rem 0;
+        }
+        .content ul{
+            display: flex;
+        }
+
+
+        @media screen and (max-width:1200px) {
+            html{
+                font-size: 15px;
+            }
+        }
+        @media screen and (max-width:980px) {
+            html{
+                font-size: 14px;
+            }
+            .wrap-1 section{
+                padding: 5rem 2rem;
+            }
+            .wrap-2 .back-2{
+                padding: 2rem 0;
+            }
+            .title p{
+                margin: 0 1rem 2rem 0;
+            }
+
+            .wrap-3 .back-3{
+                padding: 0;
+            }
+            .wrap-3 .title p{
+                margin: 0 1rem 1rem 0;
+            }
+            .pet_circle{
+                margin: 0;
+            }
+            .pet_circle1{
+                margin: 2rem 2rem 4rem 2rem;
+            }
+
+            .title-2{
+                padding: 4rem 1rem;
+            }
+            .title_2 section{
+                padding: 1rem 1rem 1rem 4rem;
+            }
+            .title-2 img{
+                width: 90%;
+                padding: 1rem;
+            }
+            .wrap-8-img section{
+                padding: 1rem 5rem 1rem 5rem;
+            }
+            .wrap-8-img p{
+                margin-top: 16rem;
+            }
+            .wrap-8-img h3{
+                margin-bottom: 10rem;
+            }
+        }
+        @media screen and (max-width:768px) {
+            html{
+                font-size: 12px;
+            }
+            .logo img{
+                width: 60%;
+            }
+            .wrap-1 section{
+                padding: 4rem 1rem 12rem;
+            }
+            .wrap-1 h1{
+                font-size: 2rem;
+            }
+            .wrap-1 p{
+                margin: 1rem;
+            }
+
+            .collapse{
+                display: none;
+            }
+            .chk{ display: block;}
+            .collapse{ 
+                position: absolute; 
+                left: 0; 
+                right: 0; 
+                top: 4rem; 
+                padding: 1rem;
+                background: var(--dbclr);
+            }
+            .collapse a{ line-height: 40px;}
+
+                nav{ 
+                    width: 100%; 
+                 text-align: right;
+                margin: 0;
+            }
+            .menu ul{
+                flex-flow: column;
+                margin: auto;
+            }
+            .menu li{
+                margin: 0;
+            }
+
+            .btn a{
+                font-size: 0.7rem;
+                padding: 0.4rem 2rem;
+            }
+            .pet_box{
+                padding: 1rem 1rem;
+            }
+            .wrap-3 .title p{
+                font-size: 1.1rem;
+            }
+            .pet_circle1{
+                width: 8rem;
+                height: 8rem;
+            }
+            .pet_circle1 h3{
+                font-size: 1.8rem;
+                padding-top: 1.8rem;
+            }
+            .title_2{
+                padding: 0;
+                transform: translate(0%, 6%);
+            }
+            .title_2 section{
+                padding: 4% 1rem 3rem 2rem;
+
+            }
+            .title_2 section h2{
+                font-size: 2.2rem;
+                padding: 0;
+            }
+            .title_2 section p{
+                font-size: 1rem;
+                padding: 0rem 0 1rem 0;
+            }
+            .title-2 img{
+                padding: 0;
+            }
+            .title-3 h2{
+                font-size: 2.2rem;
+            }
+            .title-3 p{
+                font-size: 1.1rem;
+                margin: 1rem 6rem;
+            }
+            .wrap-6 section p{
+                padding: 0.5rem 9rem 1rem;
+            }
+            .col-t-12{
+                flex: 1 1 auto;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            .premium{
+                flex-flow: wrap;
+            }
+            .premium_box{
+                margin: 1rem 9rem;
+            }
+            .premium_box h3{
+                padding: 1rem 5rem;
+            }
+
+            .wrap-8-img section{
+                padding: 1rem;
+            }
+            .wrap-8-img p{
+                font-size: 1.6rem;
+                letter-spacing: 0;
+                margin-top: 14rem;
+            }
+            .wrap-8-img h3{
+                margin-top: 1rem;
+                margin-bottom: 4rem;
+            }
+
+            .col-t-4{
+                flex: 1 1 auto;
+                flex-basis: 33.3%;
+                max-width: 33.3%;
+            }
+            .content{
+                text-align: center;
+            }
+        }
+        @media screen and (max-width:460px) {
+            html{
+                font-size: 12px;
+            }
+            .col-m-12{
+                flex: 1 1 auto;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            .wrap-1 section{
+                padding: 0 0.2rem 6rem;
+            }
+            .wrap-1 h1{
+                font-size: 1.3rem;
+            }
+            .wrap-1 p{
+                font-size: 0.8rem;
+                margin: 0.1rem 0.1rem;
+            }
+            .btn a{
+                padding: 0.4rem 1rem;
+            }
+
+            .col-m-12{
+                flex: 0 1 auto;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+            .title h2{
+                font-size: 2.3rem;
+                padding: 0;
+            }
+            .title p{
+                font-size: 1.2rem;
+                margin: 0.3rem 0.3rem 1rem 0.3rem;
+                line-height: 1.2rem;
+            }
+            .pet_box1 h3{
+                padding: 0.4rem 0.3rem 0 0.3rem ;
+            }
+            .pet_box1 p{
+                padding: 0.1rem 2rem 0.7rem;
+            }
+            .wrap-3 .back-3{
+                padding: 1rem 0 0;
+            }
+            .title h2{
+                font-size: 2.2rem;
+                padding-top: 5px;
+            }
+            .wrap-3 .title p{
+                font-size: 0.9rem;
+                margin: 0 2px 5px 10px;
+            }
+            .pet_circle1{
+                width: 5rem;
+                height: 5rem;
+                margin: 0 0 2rem 1rem;
+                border: 3px solid;
+            }
+            .pet_circle1 h3{
+                font-size: 1.3rem;
+                padding-top: 0.6rem;
+            }
+            .pet_circle1 p{
+                font-size: 0.9rem;
+            }
+            .title_2{
+                transform: translate(0%, 3%);
+            }
+            .title_2 section{
+                text-align: center;
+            }
+            .title-2{
+                padding: 3rem 0;
+                text-align: center;
+            }
+            .title-2 img{
+                width: 56%;
+            }
+
+            .title-3 p{
+                margin: 1rem 1rem;
+            }
+
+            .wrap-6 section p{
+                padding: 0.5rem 2rem 0.5rem;
+            }
+
+            .premium_box{
+                margin: 1rem;
+            }
+
+            .wrap-8-img p{
+                font-size: 1.2rem;
+                margin-top: 12rem;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            
+                <div class="heading">
+                    <div class="logo col-3">
+                        <a href="#wrap-1"><img src="4_img-logo.png" alt="logo"></a>
+                    </div>
+                    <div class="menu col-9">
+                        <div class="chk">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="collapse">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Product</a></li>
+                                    <li><a href="#">Promo</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Search</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+        </div>        
+    </header>
+        <div class="wrap-1" id="wrap-1">
+            <div class="container">
+                <div class="back">
+                    <section>
+                        <h1>We Care About Your Pet</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing <br> elit. 
+                            Dolores eaque voluptatibus cupiditate earum iusto quae <br> adipisci voluptatem itaque officiis libero.
+                        </p>
+                        <div class="btn">
+                            <a href="#">Order Now</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="wrap-2">
+        <div class="container">
+            <div class="back-2">
+                <div class="title">
+                    <h2>Title Here</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit. 
+                        Est iste soluta delectus ex <br> eveniet aspernatur eum totam amet, ullam <br> excepturi?
+                    </p>
+                </div>
+                <div class="pet_box">
+                    <div class="pet_box1 col-4 col-m-12">
+                        <img src="4_img-2-1.png" alt="img-2">
+                        <h3>Pet Care</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Corporis, aut?
+                        </p>
+                    </div>
+                    <div class="pet_box1 col-4 col-m-12">
+                        <img src="4_img-2-2.png" alt="img-2">
+                        <h3>Pet Care</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Corporis, aut?
+                        </p>
+                    </div>
+                    <div class="pet_box1 col-4 col-m-12">
+                        <img src="4_img-2-3.png" alt="img-2">
+                        <h3>Pet Care</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Corporis, aut?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-3">
+        <div class="container">
+            <div class="back-3">
+                <div class="title">
+                    <h2>Title Here</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                       <br> Est iste soluta delectus ex eveniet aspernatur eum totam amet, ullam excepturi?
+                    </p>
+                </div>
+                <div class="pet_circle">
+                    <div class="pet_circle1">
+                        <h3>3.5k</h3>
+                        <p> Pet Care </p>
+                    </div>
+                    <div class="pet_circle1">
+                        <h3>900</h3>
+                        <p> Outlet </p>
+                    </div>
+                    <div class="pet_circle1">
+                        <h3>2k+</h3>
+                        <p> Pet Helping </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-4">
+        <div class="container">
+            <div class="title_2">
+                <section class="col-6 col-m-12">
+                    <h2>Title Here</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consecte <br>
+                        tur adipisicing elit. Sint assumenda, inve <br>
+                        ntore labore dolores ab reprehenderit.
+                    </p>
+                    <div class="btn">
+                        <a href="#">Order Now</a>
+                    </div>
+                </section>
+                <div class="title-2 col-6  col-m-12">
+                    <img src="4_img-4-1.png" alt="img4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-5">
+        <div class="container">
+            <div class="title_2">
+                <div class="title-2 col-6 col-m-12">
+                    <img src="4_img-4-1.png" alt="img4">
+                </div>
+                <section class="col-6 col-m-12">
+                    <h2>Title Here</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consecte <br>
+                        tur adipisicing elit. Sint assumenda, inve <br>
+                        ntore labore dolores ab reprehenderit.
+                    </p>
+                    <div class="btn">
+                        <a href="#">Order Now</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-6">
+        <div class="container">
+            <section>
+                <h2>Pricing</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta 
+                    inventore placeat voluptate reprehenderit cumque quae.
+                </p>
+            </section>
+            <div class="premium">
+                <div class="premium_box col-4 col-t-12">
+                    <h3>Premium</h3>
+                    <img src="4_img-6.png" alt="img6">
+                    <h4>$19.00</h4>
+                    <p>
+                        Lorem ipsum dolor sit 
+                        amet consectetur adipisicing elit.
+                    </p>
+                    <div class="btn">
+                        <a href="#">Order Now</a>
+                    </div>
+                </div>
+                <div class="premium_box col-4 col-t-12">
+                    <h3>Premium</h3>
+                    <img src="4_img-6.png" alt="img6">
+                    <p>$19.00</p>
+                    <p>
+                        Lorem ipsum dolor sit 
+                        amet consectetur adipisicing elit.
+                    </p>
+                    <div class="btn">
+                        <a href="#">Order Now</a>
+                    </div>
+                </div>
+                <div class="premium_box col-4 col-t-12">
+                    <h3>Premium</h3>
+                    <img src="4_img-6.png" alt="img6">
+                    <p>$19.00</p>
+                    <p>
+                        Lorem ipsum dolor sit 
+                        amet consectetur adipisicing elit.
+                    </p>
+                    <div class="btn">
+                        <a href="#">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-7">
+        <div class="container">
+            <div class="title-3-img">
+                <div class="title-3">
+                    <h2>Title Here</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Blanditiis temporibus qui repudiandae pariatur, recusandae ab sequi tempora. Magni, corporis fuga.
+                    </p>
+                </div>
+                <div class="title-3-box">
+                    <div class="title-3-box1 col-6 col-m-12">
+                        <div class="title-3-box1-img">
+                            <img src="4_img-7-2.png" alt="img7">
+                        </div>
+                        <div class="title-3-box1-content">
+                            <h3>Lorem Ipsum</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Hic voluptatibus autem officiis nihil aut veritatis, quam corporis accusamus iusto corrupti.
+                        </p>
+                        </div>
+                    </div>
+                    <div class="title-3-box1 col-6 col-m-12">
+                        <div class="title-3-box1-img">
+                            <img src="4_img-7-2.png" alt="img7">
+                        </div>
+                        <div class="title-3-box1-content">
+                            <h3>Lorem Ipsum</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Hic voluptatibus autem officiis nihil aut veritatis, quam corporis accusamus iusto corrupti.
+                        </p>
+                        </div>
+                    </div>
+                    <div class="title-3-box1 col-6 col-m-12">
+                        <div class="title-3-box1-img">
+                            <img src="4_img-7-2.png" alt="img7">
+                        </div>
+                        <div class="title-3-box1-content">
+                            <h3>Lorem Ipsum</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Hic voluptatibus autem officiis nihil aut veritatis, quam corporis accusamus iusto corrupti.
+                        </p>
+                        </div>
+                    </div>
+                    <div class="title-3-box1 col-6 col-m-12">
+                        <div class="title-3-box1-img">
+                            <img src="4_img-7-2.png" alt="img7">
+                        </div>
+                        <div class="title-3-box1-content">
+                            <h3>Lorem Ipsum</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Hic voluptatibus autem officiis nihil aut veritatis, quam corporis accusamus iusto corrupti.
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-8">
+        <div class="container">
+            <div class="wrap-8-img">
+                <section>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur 
+                        adipisicing elit. Enim quisquam dolorum 
+                        sapiente, ex at dolorem.
+                    </p>
+                    <h3>Dr. jenny</h3>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="content">
+                <div class="f-title col-6 col-t-12">
+                    <h4>Title Here</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorem, aperiam quisquam iure suscipit facere, 
+                        aliquid voluptate sequi repudiandae similique, maxime quasi.
+                    </p>
+                    <ul>
+                        <li><a href="instagram"></a></li>
+                        <li><a href="facebook"></a></li>
+                        <li><a href="twitter"></a></li>
+                        <li><a href="whatsapp"></a></li>
+                    </ul>
+                </div>
+                <div class="f-about col-2 col-t-4">
+                    <h4>About</h4>
+                    <p>History</p>
+                    <p>Our Team</p>
+                    <p>Brand Guidelines</p>
+                    <p>Terms & Condition</p>
+                    <p>Privacy Policy</p>
+                </div>
+                <div class="f-service col-2 col-t-4">
+                    <h4>Services</h4>
+                    <p>How to Order</p>
+                    <p>Our Product</p>
+                    <p>Order Status</p>
+                    <p>Promo</p>
+                    <p>Payment Method</p>
+                </div>
+                <div class="f-other col-2 col-t-4">
+                    <h4>Other</h4>
+                    <p>Contact Us</p>
+                    <p>Help</p>
+                    <p>Privacy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        const menu = document.querySelector('.chk');
+        const nav = document.querySelector('nav');
+        const coll = document.querySelector('.collapse');
+        const li = document.querySelectorAll('li');
+
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+
+            if(menu.classList.contains('active')){
+                coll.style.display = 'block';
+            }else{
+                coll.style.display = 'none';
+            }
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                li.style.display = 'none';
+                menu.classList.remove('active');
+            });
+        });
+
+    </script>
+
+</body>
+</html>
